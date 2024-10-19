@@ -42,14 +42,14 @@ PREMIUM_LOGS = int(premium) if premium and id_pattern.search(premium) else None
 # lock file, set file limit 
 FILE_LIMITE = int(environ.get('FILE_LIMITE', 15))
 SEND_ALL_LIMITE = int(environ.get('SEND_ALL_LIMITE', 3))
-LIMIT_MODE = is_enabled((environ.get('LIMIT_MODE', 'True')), False)
+LIMIT_MODE = is_enabled((environ.get('LIMIT_MODE', 'False')), False)
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '949657126').split()]
 OWNER_USER_NAME = environ.get("OWNER_USER_NAME", "TonyStarkk616") # widout 👉 @
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002096410592').split()]
 # post channel auto post new movie
-POST_CHANNELS = list(map(int, (channel.strip() for channel in environ.get('POST_CHANNELS', '-1001998895377').split(','))))
+POST_CHANNELS = list(map(int, (channel.strip() for channel in environ.get('POST_CHANNELS', '-1001663272283').split(','))))
 AUTH_CHANNEL = int(environ.get('AUTH_CHANNEL', '-1001622914589'))
 AUTH_REQ_CHANNEL = int(environ.get('AUTH_REQ_CHANNEL', '0'))
 NO_RESULTS_MSG = is_enabled((environ.get("NO_RESULTS_MSG", 'True')), False)
@@ -86,7 +86,7 @@ TUTORIAL3 = environ.get('TUTORIAL3', 'https://t.me/safabsovhwi3')
 
 
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
-MAX_B_TN = environ.get("MAX_B_TN", "7")
+MAX_B_TN = environ.get("MAX_B_TN", "10")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/up')
@@ -102,7 +102,7 @@ AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
 PM_FILTER = is_enabled((environ.get('PM_FILTER', "True")), False)
 
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", None)
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
